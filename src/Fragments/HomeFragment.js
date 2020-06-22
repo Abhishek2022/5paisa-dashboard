@@ -6,6 +6,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import WatchList from './WatchList'
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -68,14 +70,14 @@ export default function HomeFragment() {
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
         >
-          <Tab label="Item One" {...a11yProps(0)} />
+          <Tab label="Watch List" {...a11yProps(0)} />
           <Tab label="Item Two" {...a11yProps(1)} />
           <Tab label="Item Three" {...a11yProps(2)} />
          
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+        <WatchList/>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two

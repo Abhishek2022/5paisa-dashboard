@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
+    color: "#fefefe"
   },
   search: {
     position: 'relative',
@@ -88,11 +89,15 @@ const useStyles = makeStyles((theme) => ({
 
     zIndex: theme.zIndex.drawer + 1,
     color: 'black',
-    backgroundColor : 'red',
+    backgroundColor : "#e0e0e0",
     textShadow : 'grey',
     textAlign : 'center',
-   
-   
+    backgroundImage: "url(https://images.hive.blog/0x0/https://files.peakd.com/file/peakd-hive/v4vapid/9MW59rEj-Stonks7.gif)",
+    
+  },
+  image:{
+    height: "70px",
+    width: "70px"
   },
   drawer: {
     width: drawerWidth,
@@ -109,6 +114,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     padding: theme.spacing(3),
   },
+  whiteColor:{
+    color : "#fefefe"
+  }
 }));
 
 export default function ClippedDrawer() {
@@ -127,6 +135,7 @@ export default function ClippedDrawer() {
           >
             <MenuIcon />
           </IconButton> */}
+          <img src="https://contacts.zoho.com/file?ot=8&t=serviceorg&ID=62047589" className={classes.image}/>
           <Typography className={classes.title} variant="h4" noWrap>
             5 Paisa
           </Typography>
