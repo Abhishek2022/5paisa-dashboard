@@ -18,7 +18,7 @@ import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-
+import sidebar from './../Fragments/sidebar.jpg'
 
 import { Select,MenuItem,Link,TextField } from '@material-ui/core';
 
@@ -56,6 +56,9 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: theme.spacing(1),
       width: 'auto',
     },
+  },
+  blackColor:{
+    backgroundColor:"#000000"
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
@@ -102,13 +105,15 @@ const useStyles = makeStyles((theme) => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
-    
+    height: "700px",
   },
   drawerPaper: {
     width: drawerWidth,
+    backgroundImage: "url("+sidebar+")",
+    color:"#ffffff"
   },
   drawerContainer: {
-    overflow: 'auto',
+    overflow: '',
   },
   content: {
     flexGrow: 1,
@@ -123,6 +128,7 @@ export default function ClippedDrawer() {
   const classes = useStyles();
 
   return (
+    <div>
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
@@ -184,9 +190,9 @@ export default function ClippedDrawer() {
                <ShoppingCart/>
                
                <ListItemText primary="Order" />
-               <Select labelId="label" id="select" value="1">
+               <Select className={classes.whiteColor} labelId="label" id="select" value="1">
                
-                   <MenuItem value="1">N/A</MenuItem>
+                   <MenuItem  value="1">N/A</MenuItem>
               <Typography className={classes.root}>
               <Link href="#" color="inherit">
                 <MenuItem value="10">Order Status</MenuItem>
@@ -206,7 +212,7 @@ export default function ClippedDrawer() {
               <ListItem button >
                <ShowChart/>
                 <ListItemText primary="Market Feed" />
-                <Select labelId="label" id="select" value="1">
+                <Select className={classes.whiteColor} labelId="label" id="select" value="1">
                
                    <MenuItem value="1">N/A</MenuItem>
                    <Typography className={classes.root}>
@@ -247,10 +253,14 @@ export default function ClippedDrawer() {
           
         </div>
       </Drawer>
-      <main className={classes.content}>
+      <main className={classes.content} >
         <Toolbar />
        <HomeFragment/>
       </main>
+    </div>
+    <div>
+
+    </div>
     </div>
   );
 }
